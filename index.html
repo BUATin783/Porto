@@ -1,196 +1,100 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agus Suryana | Digital Marketing Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-deep: #020617;
-            --accent: #38bdf8;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-muted: #64748b;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-
-        body {
-            background-color: var(--bg-deep);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 15px;
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        .main-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            width: 100%;
-            max-width: 500px;
-            padding: 40px 25px;
-            border-radius: 32px;
-            border: 1px solid var(--glass-border);
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-        }
-
-        .profile-container { margin-bottom: 30px; }
-        
-        .avatar-wrapper {
-            position: relative;
-            width: 115px;
-            height: 115px;
-            margin: 0 auto 20px;
-        }
-
-        .avatar-img { 
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 35px;
-            border: 3px solid var(--accent);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
-            display: block;
-        }
-
-        h1 { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 6px; }
-        
-        .badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 4px 14px;
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        .action-list { display: flex; flex-direction: column; gap: 14px; }
-        
-        .nav-link { 
-            text-decoration: none; padding: 18px; border-radius: 20px; 
-            font-weight: 700; display: flex; align-items: center; 
-            justify-content: center; gap: 12px; color: white; 
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            font-size: 15px; border: 1px solid transparent;
-        }
-
-        .nav-link:hover { transform: scale(1.02); }
-        .wa { background: #059669; }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-        .port-trigger { 
-            background: rgba(255,255,255,0.05); 
-            border-color: var(--glass-border);
-            cursor: pointer;
-        }
-
-        #showcase { 
-            display: none; margin-top: 35px; text-align: left;
-            animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .showcase-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 15px; padding: 0 5px;
-        }
-        .showcase-header h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        .portfolio-frame {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            height: 480px;
-            width: 100%;
-            position: relative;
-        }
-
-        .portfolio-frame iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none;
-            /* Mematikan scroll horizontal pada iframe */
-            overflow-x: hidden; 
-        }
-
-        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .copyright { font-size: 11px; color: var(--text-muted); margin-top: 40px; text-transform: uppercase; letter-spacing: 1px; }
-    </style>
-</head>
-<body>
-
-    <div class="main-card">
-        <div class="profile-container">
-            <div class="avatar-wrapper">
-                <img src="https://lh3.googleusercontent.com/d/1upufXuscOusPiMFHlD71BMWSjalDl5G9" 
-                     alt="Agus Suryana" 
-                     class="avatar-img">
-            </div>
-            <h1>Agus Suryana</h1>
-            <span class="badge">Digital Marketing</span>
+<div id="showcase">
+    <div class="showcase-header">
+        <div class="header-label">
+            <span class="live-dot"></span>
+            <h3>Live Cloud Portfolio</h3>
         </div>
-
-        <div class="action-list">
-            <a href="https://wa.me/6281296642731" target="_blank" class="nav-link wa">
-                <i class="fab fa-whatsapp"></i> Hubungi WhatsApp
-            </a>
-
-            <a href="https://instagram.com/it_tng_tournament" target="_blank" class="nav-link ig">
-                <i class="fab fa-instagram"></i> Portofolio Instagram
-            </a>
-
-            <button id="portBtn" class="nav-link port-trigger">
-                <i class="fas fa-th-large"></i> Explore Showcase
-            </button>
+        <div class="sync-status">
+            <i class="fas fa-sync-alt fa-spin"></i>
+            <span>Synced</span>
         </div>
-
-        <div id="showcase">
-            <div class="showcase-header">
-                <h3>Live Project Folder</h3>
-                <i class="fas fa-circle-notch fa-spin" style="font-size: 10px; color: var(--accent);"></i>
-            </div>
-            
-            <div class="portfolio-frame">
-                <iframe src="https://drive.google.com/embeddedfolderview?id=1DcHLSviLA-9JcplqdAnG7kLySpLy3aMb#grid"></iframe>
-            </div>
-        </div>
-
-        <p class="copyright">Agus Suryana • Strategist • 2026</p>
     </div>
+    
+    <div class="portfolio-container">
+        <div class="portfolio-frame">
+            <iframe src="https://drive.google.com/embeddedfolderview?id=1DcHLSviLA-9JcplqdAnG7kLySpLy3aMb#grid"></iframe>
+        </div>
+    </div>
+    <p class="frame-hint">Klik gambar untuk melihat detail proyek</p>
+</div>
 
-    <script>
-        const btn = document.getElementById('portBtn');
-        const showcase = document.getElementById('showcase');
+<style>
+    /* Tambahkan/Ganti CSS ini untuk merapikan Showcase */
+    #showcase { 
+        display: none; 
+        margin-top: 35px; 
+        animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-        btn.addEventListener('click', () => {
-            const isOpen = showcase.style.display === 'block';
-            if (!isOpen) {
-                showcase.style.display = "block";
-                btn.innerHTML = '<i class="fas fa-chevron-up"></i> Tutup Portofolio';
-                // Delay sebentar agar elemen muncul dulu sebelum discroll
-                setTimeout(() => {
-                    showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            } else {
-                showcase.style.display = "none";
-                btn.innerHTML = '<i class="fas fa-th-large"></i> Explore Showcase';
-            }
-        });
-    </script>
-</body>
-</html>
+    .showcase-header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        margin-bottom: 15px; 
+        padding: 0 5px;
+    }
+
+    .header-label { display: flex; align-items: center; gap: 8px; }
+    
+    .live-dot {
+        width: 8px; height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #22c55e;
+        display: inline-block;
+    }
+
+    .showcase-header h3 { 
+        font-size: 12px; 
+        color: var(--text-main); 
+        text-transform: uppercase; 
+        letter-spacing: 1.5px; 
+        font-weight: 700;
+    }
+
+    .sync-status {
+        font-size: 10px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(255,255,255,0.05);
+        padding: 4px 10px;
+        border-radius: 20px;
+    }
+
+    .portfolio-container {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px;
+        border-radius: 28px;
+        border: 1px solid var(--glass-border);
+    }
+
+    .portfolio-frame {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 480px;
+        width: 100%;
+        position: relative;
+        /* Menghilangkan bayangan default iframe */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .portfolio-frame iframe { 
+        width: 100%; 
+        height: 100%; 
+        border: none;
+        overflow-x: hidden;
+    }
+
+    .frame-hint {
+        text-align: center;
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 12px;
+        font-style: italic;
+    }
+
+    @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
