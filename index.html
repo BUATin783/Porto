@@ -48,8 +48,8 @@
         
         .avatar-wrapper {
             position: relative;
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             margin: 0 auto 20px;
         }
 
@@ -59,7 +59,7 @@
             object-fit: cover;
             border-radius: 35px;
             border: 3px solid var(--accent);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
             display: block;
         }
 
@@ -109,7 +109,7 @@
         .showcase-header h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
         .portfolio-frame {
-            background: white; /* Latar belakang frame jadi putih agar warna konten normal */
+            background: white;
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
@@ -118,7 +118,6 @@
 
         .portfolio-frame iframe { 
             width: 100%; height: 100%; border: none; 
-            /* Filter negatif dihapus agar warna asli */
         }
 
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -131,7 +130,9 @@
     <div class="main-card">
         <div class="profile-container">
             <div class="avatar-wrapper">
-                <img src="2dd24d82" alt="Agus Suryana" class="avatar-img" onerror="this.src='https://raw.githubusercontent.com/BUATin783/Porto/refs/heads/main/2dd24d82-9f00-4766-a534-0a0e57d7fb51.JPG">
+                <img src="https://raw.githubusercontent.com/BUATin783/Porto/refs/heads/main/2dd24d82-9f00-4766-a534-0a0e57d7fb51.JPG" 
+                     alt="Agus Suryana" 
+                     class="avatar-img">
             </div>
             <h1>Agus Suryana</h1>
             <span class="badge">Digital Marketing Expert</span>
