@@ -29,7 +29,6 @@
             min-height: 100vh;
             padding: 40px 15px;
             color: var(--text-main);
-            overflow-x: hidden; /* Mencegah seluruh halaman goyang ke samping */
         }
 
         .main-card {
@@ -109,24 +108,16 @@
         }
         .showcase-header h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Perbaikan Frame Google Drive */
         .portfolio-frame {
             background: white;
             border-radius: 24px;
-            overflow: hidden; /* Potong bagian yang meluber */
+            overflow: hidden;
             border: 1px solid var(--glass-border);
             height: 480px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .portfolio-frame iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none;
-            overflow-x: hidden; /* Kunci gulir samping di tingkat iframe */
+            width: 100%; height: 100%; border: none; 
         }
 
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -139,7 +130,7 @@
     <div class="main-card">
         <div class="profile-container">
             <div class="avatar-wrapper">
-                <img src="https://lh3.googleusercontent.com/d/https://drive.google.com/file/d/1upufXuscOusPiMFHlD71BMWSjalDl5G9/view?usp=drivesdk" 
+                <img src="https://drive.google.com/file/d/1upufXuscOusPiMFHlD71BMWSjalDl5G9/view?usp=drivesdk" 
                      alt="Agus Suryana" 
                      class="avatar-img">
             </div>
@@ -168,7 +159,7 @@
             </div>
             
             <div class="portfolio-frame">
-                <iframe src="https://drive.google.com/embeddedfolderview?id=1DcHLSviLA-9JcplqdAnG7kLySpLy3aMb#grid" scrolling="no"></iframe>
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1DcHLSviLA-9JcplqdAnG7kLySpLy3aMb#grid"></iframe>
             </div>
         </div>
 
@@ -184,10 +175,7 @@
             if (!isOpen) {
                 showcase.style.display = "block";
                 btn.innerHTML = '<i class="fas fa-chevron-up"></i> Tutup Portofolio';
-                // Scroll halus ke arah konten
-                setTimeout(() => {
-                    showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             } else {
                 showcase.style.display = "none";
                 btn.innerHTML = '<i class="fas fa-th-large"></i> Explore Showcase';
