@@ -44,23 +44,22 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
-        /* Profile Area Updated with Your Photo */
         .profile-container { margin-bottom: 30px; }
         
         .avatar-wrapper {
             position: relative;
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             margin: 0 auto 20px;
         }
 
         .avatar-img { 
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Menjaga proporsi foto */
-            border-radius: 35px; /* Bentuk Squircle modern */
+            object-fit: cover;
+            border-radius: 35px;
             border: 3px solid var(--accent);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
             display: block;
         }
 
@@ -79,7 +78,6 @@
             margin-bottom: 25px;
         }
 
-        /* Action Buttons */
         .action-list { display: flex; flex-direction: column; gap: 14px; }
         
         .nav-link { 
@@ -99,7 +97,6 @@
             cursor: pointer;
         }
 
-        /* Showcase Area */
         #showcase { 
             display: none; margin-top: 35px; text-align: left;
             animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -112,7 +109,7 @@
         .showcase-header h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
         .portfolio-frame {
-            background: rgba(0, 0, 0, 0.3);
+            background: white;
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
@@ -121,7 +118,6 @@
 
         .portfolio-frame iframe { 
             width: 100%; height: 100%; border: none; 
-         hue-rotate(180deg);
         }
 
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -134,7 +130,9 @@
     <div class="main-card">
         <div class="profile-container">
             <div class="avatar-wrapper">
-                <img src="2dd24d82" alt="Agus Suryana" class="avatar-img" onerror="this.src='https://drive.google.com/file/d/1upufXuscOusPiMFHlD71BMWSjalDl5G9/view?usp=drivesdk">
+                <img src="https://lh3.googleusercontent.com/d/1upufXuscOusPiMFHlD71BMWSjalDl5G9" 
+                     alt="Agus Suryana" 
+                     class="avatar-img">
             </div>
             <h1>Agus Suryana</h1>
             <span class="badge">Digital Marketing</span>
