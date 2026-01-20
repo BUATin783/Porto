@@ -11,7 +11,6 @@
         :root {
             --bg-deep: #020617;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.3);
             --glass: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #f8fafc;
@@ -45,25 +44,23 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
-        /* Profile Area */
+        /* Profile Area Updated with Your Photo */
         .profile-container { margin-bottom: 30px; }
         
-        .avatar { 
-            width: 100px; 
-            height: 100px; 
-            border-radius: 30px; 
-            margin: 0 auto 20px; 
-            overflow: hidden; /* Penting: agar foto tidak keluar bingkai */
-            transform: rotate(-5deg);
-            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.2);
-            border: 2px solid var(--glass-border);
-            background: var(--glass);
+        .avatar-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
         }
 
-        .avatar img {
+        .avatar-img { 
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Penting: agar foto tetap proporsional */
+            object-fit: cover; /* Menjaga proporsi foto */
+            border-radius: 35px; /* Bentuk Squircle modern */
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
             display: block;
         }
 
@@ -73,61 +70,45 @@
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent);
-            padding: 6px 16px;
+            padding: 4px 14px;
             border-radius: 100px;
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
         }
 
-        /* Buttons/Actions */
-        .action-list { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+        /* Action Buttons */
+        .action-list { display: flex; flex-direction: column; gap: 14px; }
         
         .nav-link { 
-            text-decoration: none; 
-            padding: 18px; 
-            border-radius: 20px; 
-            font-weight: 700; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 12px; 
-            color: white; 
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            font-size: 15px;
-            border: none;
-            width: 100%;
+            text-decoration: none; padding: 18px; border-radius: 20px; 
+            font-weight: 700; display: flex; align-items: center; 
+            justify-content: center; gap: 12px; color: white; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            font-size: 15px; border: 1px solid transparent;
         }
 
-        .nav-link:hover { transform: translateY(-3px); opacity: 0.9; }
-        
-        .wa { background: #059669; box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2); }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); box-shadow: 0 10px 20px rgba(220, 39, 67, 0.2); }
+        .nav-link:hover { transform: scale(1.02); }
+        .wa { background: #059669; }
+        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .port-trigger { 
             background: rgba(255,255,255,0.05); 
-            border: 1px solid var(--glass-border) !important;
+            border-color: var(--glass-border);
             cursor: pointer;
-            color: var(--text-main);
         }
 
         /* Showcase Area */
         #showcase { 
-            display: none; 
-            margin-top: 30px; 
-            text-align: left;
-            animation: slideIn 0.5s ease-out;
+            display: none; margin-top: 35px; text-align: left;
+            animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .showcase-header {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            margin-bottom: 15px; 
-            padding: 0 5px;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 15px; padding: 0 5px;
         }
-        
         .showcase-header h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
         .portfolio-frame {
@@ -135,63 +116,56 @@
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
-            height: 450px;
+            height: 480px;
         }
 
         .portfolio-frame iframe { 
             width: 100%; height: 100%; border: none; 
-            filter: contrast(0.9) brightness(1.1);
+            filter: invert(0.9) hue-rotate(180deg) brightness(1.1);
         }
 
-        .tip {
-            margin-top: 15px; font-size: 11px; color: var(--text-muted);
-            text-align: center; font-style: italic;
-        }
-
-        @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
-        .copyright { font-size: 10px; color: var(--text-muted); margin-top: 40px; letter-spacing: 1px; opacity: 0.6; }
+        .copyright { font-size: 11px; color: var(--text-muted); margin-top: 40px; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
     <div class="main-card">
         <div class="profile-container">
-            <div class="avatar">
-                <img src="https://files.oaiusercontent.com/file-2dd24d82-9f00-4766-a534-0a0e57d7fb51" alt="Agus Suryana">
+            <div class="avatar-wrapper">
+                <img src="2dd24d82-9f00-4766-a534-0a0e57d7fb51" alt="Agus Suryana" class="avatar-img" onerror="this.src='https://via.placeholder.com/110?text=Agus+S';">
             </div>
-            <span class="badge">Digital Marketing Expert</span>
             <h1>Agus Suryana</h1>
+            <span class="badge">Digital Marketing Expert</span>
         </div>
 
         <div class="action-list">
             <a href="https://wa.me/6281296642731" target="_blank" class="nav-link wa">
-                <i class="fab fa-whatsapp"></i> Konsultasi Strategi
+                <i class="fab fa-whatsapp"></i> Hubungi WhatsApp
             </a>
 
             <a href="https://instagram.com/it_tng_tournament" target="_blank" class="nav-link ig">
-                <i class="fab fa-instagram"></i> Cek Update IG
+                <i class="fab fa-instagram"></i> Portofolio Instagram
             </a>
 
             <button id="portBtn" class="nav-link port-trigger">
-                <i class="fas fa-th-large"></i> Explore Portfolio
+                <i class="fas fa-th-large"></i> Explore Showcase
             </button>
         </div>
 
         <div id="showcase">
             <div class="showcase-header">
-                <h3>Live Showcase</h3>
+                <h3>Live Project Folder</h3>
                 <i class="fas fa-circle-notch fa-spin" style="font-size: 10px; color: var(--accent);"></i>
             </div>
             
             <div class="portfolio-frame">
                 <iframe src="https://drive.google.com/embeddedfolderview?id=1DcHLSviLA-9JcplqdAnG7kLySpLy3aMb#grid"></iframe>
             </div>
-
-            <p class="tip">Ketuk pada item untuk melihat detail project</p>
         </div>
 
-        <p class="copyright">EXPERT MARKETING &bull; 2026 &bull; AGUS SURYANA</p>
+        <p class="copyright">Agus Suryana &bull; Strategist &bull; 2026</p>
     </div>
 
     <script>
@@ -200,19 +174,13 @@
 
         btn.addEventListener('click', () => {
             const isOpen = showcase.style.display === 'block';
-            
             if (!isOpen) {
                 showcase.style.display = "block";
                 btn.innerHTML = '<i class="fas fa-chevron-up"></i> Tutup Portofolio';
-                btn.style.borderColor = "var(--accent)";
-                // Memberikan sedikit jeda agar animasi selesai sebelum scroll
-                setTimeout(() => {
-                    showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             } else {
                 showcase.style.display = "none";
-                btn.innerHTML = '<i class="fas fa-th-large"></i> Explore Portfolio';
-                btn.style.borderColor = "var(--glass-border)";
+                btn.innerHTML = '<i class="fas fa-th-large"></i> Explore Showcase';
             }
         });
     </script>
